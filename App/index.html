@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Index</title>
+		<link type="text/css" rel="stylesheet" href="bootstrap.css"></link>
+		<link type="text/css" rel="stylesheet" href="style.css"></link>
+	</head>
+	<body>
+		<div class="container" ng-app="DominoApp" ng-cloak>
+			<div id="header" class="row">
+				Header
+			</div>
+			<div id="main" class="row" ng-controller="AvatarController">
+				Body
+				<div>
+					Avatars
+					<div ng-repeat="avatar in modelAvatars">
+						<img src="/img/{{avatar.Photo}}.jpg" alt="{{avatar.Name}}">
+						<span>{{avatar.Name}}</span>
+					</div>
+				</div>
+				<div>
+					Botones
+					<span>Jugar</span>
+				</div>
+			</div>
+			<div id="footer" class="row">
+				Footer
+			</div>
+		</div>
+	</body>
+	    
+	<script src="angular-1.5.7.min.js" type="text/javascript"></script>
+	<script src="domino-app.js" type="text/javascript"></script>	
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+		//Genera el websocket
+		var socket = io.connect('http://localhost:8081');
+	  
+		//Definición del lado del cliente
+		socket.on('news', function (data) {
+			console.log(data);
+			//socket.emit('my other event', { my: 'data' });
+			
+			//socket.emit('player_diconected', { my: 'data' });
+		});
+	</script>
+</html>

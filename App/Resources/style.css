@@ -1,0 +1,33 @@
+body
+{
+	background:#EEEEEE;
+}
+.container
+{
+	background:#FFFFFF;
+}
+#header
+{
+	background:#f0c14b;
+	border:1px solid #a88734;
+	padding:10px;
+	text-align:center;
+	font-size:15px;
+	font-weight:bold;
+}
+#main
+{
+	border:1px solid #a88734;
+	padding:10px;
+}
+#footer
+{
+	background:#f0c14b;
+	border:1px solid #a88734;
+	padding:10px;
+	text-align:center;
+	font-size:15px;
+	font-weight:bold;
+}
+
+
