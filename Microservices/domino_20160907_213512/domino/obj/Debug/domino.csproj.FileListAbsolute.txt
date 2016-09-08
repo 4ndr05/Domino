@@ -1,0 +1,5 @@
+C:\Projects\Projects\RAMLCodeBuilder\output\domino_20160907_213512\domino\bin\domino.dll
+C:\Projects\Projects\RAMLCodeBuilder\output\domino_20160907_213512\domino\bin\domino.pdb
+C:\Projects\Projects\RAMLCodeBuilder\output\domino_20160907_213512\domino\bin\ServiceCore.dll
+C:\Projects\Projects\RAMLCodeBuilder\output\domino_20160907_213512\domino\obj\Debug\domino.dll
+C:\Projects\Projects\RAMLCodeBuilder\output\domino_20160907_213512\domino\obj\Debug\domino.pdb
