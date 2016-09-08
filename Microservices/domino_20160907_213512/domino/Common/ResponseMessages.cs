@@ -24,19 +24,19 @@ namespace Domino.Common
         private static List<Error> _apiErrors = new List<Error> 
         { 
             // { "errors": [ { "api": "domino", "code": "403-0", "description": "Tile does not exist", "details" : "" } ]}
-            { new Error("403-10", "Error Forbidden") },
-            // { "errors": [ { "api": "domino", "code": "404-1", "description": "matches not found", "details": "" } ]} 
-            { new Error("404-10", "Error NotFound") },
-            // { "errors": [ { "api": "domino", "code": "404-2", "description": "match not found", "details": "" } ]}
-            { new Error("404-11", "Error NotFound") },
-            // { "errors": [ { "api": "domino", "code": "404-2", "description": "player not found", "details": "" } ]}
-            { new Error("404-12", "Error NotFound") },
-            // { "errors": [ { "api": "domino", "code": "404-1", "description": "Item already exists", "details": "" } ]}
-            { new Error("409-10", "Error Conflict") },
-            // { "errors": [ { "api": "domino", "code": "404-2", "description": "Item already exists", "details": "" } ]}
-            { new Error("409-11", "Error Conflict") },
-            // { "errors": [ { "api": "domino", "code": "500-1", "description": "Datasource exception", "details" : "" } ]}
-            { new Error("500-10", "Error InternalServerError") }
+{ new Error("403-10", "Error Forbidden") },
+// { "errors": [ { "api": "domino", "code": "404-1", "description": "matches not found", "details": "" } ]} 
+{ new Error("404-10", "Error NotFound") },
+// { "errors": [ { "api": "domino", "code": "404-2", "description": "match not found", "details": "" } ]}
+{ new Error("404-11", "Error NotFound") },
+// { "errors": [ { "api": "domino", "code": "404-2", "description": "player not found", "details": "" } ]}
+{ new Error("404-12", "Error NotFound") },
+// { "errors": [ { "api": "domino", "code": "404-1", "description": "Item already exists", "details": "" } ]}
+{ new Error("409-10", "Error Conflict") },
+// { "errors": [ { "api": "domino", "code": "404-2", "description": "Item already exists", "details": "" } ]}
+{ new Error("409-11", "Error Conflict") },
+// { "errors": [ { "api": "domino", "code": "500-1", "description": "Datasource exception", "details" : "" } ]}
+{ new Error("500-10", "Error InternalServerError") }
 
         };
 

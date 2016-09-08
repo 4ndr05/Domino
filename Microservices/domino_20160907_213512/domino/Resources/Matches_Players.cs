@@ -93,7 +93,7 @@ namespace Domino.Resources
                 // Item5 = colección de pares resource-instance 
                 var urlSegments = Resource.GetUrlSegments(context);
 
-                return !string.IsNullOrWhiteSpace(urlSegments.Item5 != null && urlSegments.Item5.Count > 0 ? urlSegments.Item5[0][1] : "") ? Get_Instance(urlSegments.Item4, urlSegments.Item5[0][1]) : Resource.NotImplementedGET(context);
+                return string.IsNullOrWhiteSpace(urlSegments.Item5 != null && urlSegments.Item5.Count > 0 ? urlSegments.Item5[0][1] : "") ? Get_Resource(urlSegments.Item4) : Get_Instance(urlSegments.Item4, urlSegments.Item5[0][1]);
             }
             catch (Exception ex)
             {
@@ -163,6 +163,29 @@ namespace Domino.Resources
             else
                 return delete_players_instance(instance_matches, instance_players);
         }
+        public ResponseObject Post_Resource(string instance_matches, string bodyData)
+        {
+            Dictionary<string, Validator.StatusCode> objInstances = new Dictionary<string, Validator.StatusCode>(),
+                objParameters = new Dictionary<string, Validator.StatusCode>(),
+                objUpdater = new Dictionary<string, Validator.StatusCode>();
+
+            #region validación de instancias
+            objInstances["matches"] = Validator.StatusCode.Success;
+            if (string.IsNullOrWhiteSpace(instance_matches))
+                objInstances["matches"] = Validator.StatusCode.MissingField;
+            #endregion
+
+            var valInstances = Validator.GroupFieldsByStatus(objInstances);
+            var valParameters = Validator.GroupFieldsByStatus(objParameters);
+            var valUpdater = Validator.GroupFieldsByStatus(objUpdater);
+            if (valInstances.Any(error => error["statuscode"].ToString() != "1") || valParameters.Any(error => error["statuscode"].ToString() != "1") || valUpdater.Any(error => error["statuscode"].ToString() != "1"))
+            {
+                var validation = new Dictionary<string, object> { { "instances", valInstances }, { "parameters", valParameters }, { "updater", valUpdater } };
+                return Response.BuildMessage(HttpStatusCode.BadRequest, ResponseMsgs.BuildError(Response.CodeTypes.BadParameters, validation));
+            }
+            else
+                return post_players_resource(instance_matches, bodyData);
+        }
         public ResponseGET Get_Instance(string instance_matches, string instance_players)
         {
             Dictionary<string, Validator.StatusCode> objInstances = new Dictionary<string, Validator.StatusCode>(),
@@ -189,7 +212,7 @@ namespace Domino.Resources
             else
                 return get_players_instance(instance_matches, instance_players);
         }
-        public ResponseObject Post_Resource(string instance_matches, string bodyData)
+        public ResponseGET Get_Resource(string instance_matches)
         {
             Dictionary<string, Validator.StatusCode> objInstances = new Dictionary<string, Validator.StatusCode>(),
                 objParameters = new Dictionary<string, Validator.StatusCode>(),
@@ -207,13 +230,13 @@ namespace Domino.Resources
             if (valInstances.Any(error => error["statuscode"].ToString() != "1") || valParameters.Any(error => error["statuscode"].ToString() != "1") || valUpdater.Any(error => error["statuscode"].ToString() != "1"))
             {
                 var validation = new Dictionary<string, object> { { "instances", valInstances }, { "parameters", valParameters }, { "updater", valUpdater } };
-                return Response.BuildMessage(HttpStatusCode.BadRequest, ResponseMsgs.BuildError(Response.CodeTypes.BadParameters, validation));
+                return Response.BuildGETMessage(HttpStatusCode.BadRequest, ResponseMsgs.BuildError(Response.CodeTypes.BadParameters, validation));
             }
             else
-                return post_players_resource(instance_matches, bodyData);
+                return get_players_resource(instance_matches);
         }
 
-        private ResponseObject post_players_resource(string instance_matches, string bodyData)
+        private ResponseGET get_players_resource(string instance_matches)
         {
             var condition = true;
             var validation = new ValidationErrors(HttpStatusCode.OK, new Errors());
@@ -221,11 +244,11 @@ namespace Domino.Resources
 
             if (validation.Item2.Count == 0)
             {
-                var response = dal_post_players_resource();
-                return Response.BuildMessage(HttpStatusCode.Created, response: response);
+                var response = dal_get_players_resource();
+                return Response.BuildGETMessage(HttpStatusCode.OK, response: response);
             }
             else
-                return Response.BuildMessage(validation.Item1, errors: validation.Item2);
+                return Response.BuildGETMessage(validation.Item1, errors: validation.Item2);
         }
 
         private ResponseGET get_players_instance(string instance_matches, string instance_players)
@@ -241,6 +264,21 @@ namespace Domino.Resources
             }
             else
                 return Response.BuildGETMessage(validation.Item1, errors: validation.Item2);
+        }
+
+        private ResponseObject post_players_resource(string instance_matches, string bodyData)
+        {
+            var condition = true;
+            var validation = new ValidationErrors(HttpStatusCode.OK, new Errors());
+
+
+            if (validation.Item2.Count == 0)
+            {
+                var response = dal_post_players_resource();
+                return Response.BuildMessage(HttpStatusCode.Created, response: response);
+            }
+            else
+                return Response.BuildMessage(validation.Item1, errors: validation.Item2);
         }
 
         private ResponseObject delete_players_instance(string instance_matches, string instance_players)
@@ -263,19 +301,26 @@ namespace Domino.Resources
 
         #region Métodos de acceso a datos
 
-        private string dal_post_players_resource()
+        private string dal_get_players_resource()
         {
             return @"{
-   ""playerid"":""PSDSFFDFNWJSDNFLDFK"",
-   ""creation_date"":""2015-11-30"",
-   ""alias"":""El loco"",
-   ""avatar"":""willy_chirino"",
-   ""tiles"":{
-      ""points"":0,
+   ""players"":{
       ""items"":[
+         {
+            ""playerid"":""PSDSFFDFNWJSDNFLDFK"",
+            ""creation_date"":""2015-11-30"",
+            ""alias"":""El loco"",
+            ""avatar"": ""willy_chirino""
+         },
+         {
+            ""playerid"":""PJDLSOWERNFLEKFND"",
+            ""creation_date"":""2015-11-30"",
+            ""alias"":""Azuca !!!"",
+            ""avatar"": ""celia_cruz""
+         }
       ]
    }
-}";
+}     ";
         }
         private string dal_get_players_instance()
         {
@@ -302,6 +347,20 @@ namespace Domino.Resources
             ""side_a"":""4"",
             ""side_b"":""5""
          }
+      ]
+   }
+}";
+        }
+        private string dal_post_players_resource()
+        {
+            return @"{
+   ""playerid"":""PSDSFFDFNWJSDNFLDFK"",
+   ""creation_date"":""2015-11-30"",
+   ""alias"":""El loco"",
+   ""avatar"":""willy_chirino"",
+   ""tiles"":{
+      ""points"":0,
+      ""items"":[
       ]
    }
 }";

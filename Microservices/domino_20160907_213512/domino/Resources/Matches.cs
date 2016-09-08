@@ -179,8 +179,6 @@ namespace Domino.Resources
             {
                 foreach (var field in json_fields)
                     objUpdater[field] = Validator.StatusCode.Success;
-                if (string.IsNullOrWhiteSpace(json_updater["title"]))
-                    objUpdater["title"] = Validator.StatusCode.MissingField;
             }
             #endregion
 
@@ -233,8 +231,6 @@ namespace Domino.Resources
             {
                 foreach (var field in json_fields)
                     objUpdater[field] = Validator.StatusCode.Success;
-                if (string.IsNullOrWhiteSpace(json_updater["title"]))
-                    objUpdater["title"] = Validator.StatusCode.MissingField;
             }
             #endregion
 
