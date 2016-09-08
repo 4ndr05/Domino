@@ -16,4 +16,15 @@ app.controller('AvatarController', function ($scope, $http)
 	avatars[10] = {Name:"Putin", Photo:"putin"};
 	avatars[11] = {Name:"Trump", Photo:"trump"};
 	$scope.modelAvatars = avatars;	
+
+	$scope.Play = function() 
+	{
+		//Genera el websocket
+		var socket = io.connect('http://localhost:8081');
+		
+		//Nuevo Jugador
+		socket.on('NuevoJugador', function (data) {
+			console.log("Nuevo Jugador: " + data.Name);
+		});
+	}
 });
