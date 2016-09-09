@@ -74,8 +74,9 @@ io.on('connection', function (socket) {
 
     console.log("Usuario conectado - " + socket.id);
 
-    socket.on('newPlayer', fu(nction(msg) {
-        console.log(msg.split('|')));
+    socket.on('newPlayer', function(msg) {
+
+        var props = msg.split('|');
         addParticipant(socket);
     });
 
