@@ -243,20 +243,19 @@ body#bgGame
     height: auto;
     overflow: hidden;
     margin: 0 0 0 400px;
-    bottom: 30px;
+    bottom: 170px;
     position: absolute;
 }
 #game_status
 {
-    padding: 20px 20px 20px 20px;
     text-align: center;
-    float: left;
-    width: 400px;
+    width: auto;
     height: auto;
     overflow: hidden;
-    margin: 0 0 0 400px;
-    bottom: 30px;
-    /*position: absolute;*/
+    margin: 0;
+    position: absolute;
+    top: 190px;
+    right: 590px;
 }
 .domino
 {
@@ -301,6 +300,11 @@ body#bgGame
     font-size: 160%;
     color: #fff;
     width: 340px;
+}
+.GameContainer
+{
+    height: auto;
+    min-height: 900px;
 }
 
 #footer

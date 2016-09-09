@@ -5,9 +5,11 @@
 		<link type="text/css" rel="stylesheet" href="/css/bootstrap.css"></link>
 		<link type="text/css" rel="stylesheet" href="/css/style.css"></link>
 	</head>
-	<body id="bgGame">
-		<div class="col-lg-12" ng-app="DominoApp" ng-cloak>			
-			<div id="main" class="row" ng-controller="GameController">
+	<body id="bgGame" ng-app="DominoApp">
+
+		<div class="GameContainer  col-lg-12" ng-controller="GameController" ng-cloak>		
+				
+			<div id="main" class="row" >
 				<h1>{{modelGame.title}}</h1>
                 <div id="jugadores">
 					Jugadores
@@ -16,25 +18,21 @@
 						<span>{{player.alias}}</span>
 					</div>
 				</div>
-				
+			</div>	
 				<div id="game_status">
-					<span class="titleFSection">Fichas jugadas</span>
+					<span class="titleFSection"></span>
 					<span class="domino_game"   ng-repeat="tile in modelGame.state.tiles.items">
 						{{tile.tileid}}
 					</span>
-				<div>
-			</div>
-
-			<div id="footer" class="row">
-
-			</div>
-		</div>
-		<div id="MisFichas">
-				<span class="titleFSection">Mis fichas </span>
+				</div>
+			<div id="MisFichas">
+					<span class="titleFSection">Mis fichas </span>
 					<span class="domino" ng-repeat="tile in myTiles.tiles.items"  ng-click="Move(tile.tileid)">
-						{{tile.tileid}}
+							{{tile.tileid}}
 					</span>
 				</div>
+		</div>
+
 	</body>
 
 	<script src="/js/angular-1.5.7.min.js" type="text/javascript"></script>
