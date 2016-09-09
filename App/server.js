@@ -38,7 +38,7 @@ server.listen(serverPort, function () {
     console.log("Domino listening at http://%s:%s", server.address().address, server.address().port)
 })
 
-function addParticipant(data) {
+function addParticipant(data, nick, icon) {
 
     var currentGameId;
     var joined = false;
@@ -73,7 +73,11 @@ function addParticipant(data) {
 io.on('connection', function (socket) {
 
     console.log("Usuario conectado - " + socket.id);
-    addParticipant(socket);
+
+    socket.on('newPlayer', fu(nction(msg) {
+        console.log(msg.split('|')));
+        addParticipant(socket);
+    });
 
     socket.on('disconnect', function () {
 	  //io.emit('player_diconected', { player: 'xxxxx' } );
