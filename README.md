@@ -1,2 +1,0 @@
-# Domino
-Havana Games
