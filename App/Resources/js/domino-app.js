@@ -30,3 +30,76 @@ app.controller('AvatarController', function ($scope, $http)
 		});
 	}
 });
+<<<<<<< HEAD
+=======
+
+app.controller('GameController', function ($scope, $http) 
+{
+	var game = 
+	{
+   "matchid":"MJSEFJBSFJABSFJKFBSKDV",
+   "creation_date":"2015-11-30",
+   "title":"Match de pruebas del domino",
+   "state":{
+      "max_tiles":28,
+      "status": "playing",
+      "next_player": "PLIJSMFMGRNFOGNDKF",
+      "game_stream":"6-6,6-4,4-5",
+      "side_a":"6",
+      "side_b":"5",      
+      "tiles":{
+         "items":[
+            {
+               "tileid":"6-6",
+               "side_a":"6",
+               "side_b":"6",
+               "playerid":"PSDSFFDFNWJSDNFLDFK"
+            },
+            {
+               "tileid":"6-4",
+               "side_a":"6",
+               "side_b":"4",
+               "playerid":"PSDSFFDFNWJSDNFLDFK"
+            },
+            {
+               "tileid":"4-5",
+               "side_a":"4",
+               "side_b":"5",
+               "playerid":"PKDONFGFGMPFKGDDGD"
+            }            
+         ]
+      }
+   },
+   "players":{
+      "items":[
+         {
+            "playerid":"PSDSFFDFNWJSDNFLDFK",
+            "creation_date":"2015-11-30",
+            "alias":"El loco",
+            "avatar": "putin"            
+         },
+         {
+            "playerid":"PJDLSOWERNFLEKFND",
+            "creation_date":"2015-11-30",
+            "alias":"Azuca !!!",
+            "avatar": "celia"
+         },
+         {
+            "playerid":"PKDONFGFGMPFKGDDGD",
+            "creation_date":"2015-11-30",
+            "alias":"player_3",
+            "avatar": "fidel"            
+         },
+         {
+            "playerid":"PLIJSMFMGRNFOGNDKF",
+            "creation_date":"2015-11-30",
+            "alias":"kubano",
+            "avatar": "che"
+         }              
+      ]
+   }
+}
+
+	$scope.modelGame = game;
+});
+>>>>>>> origin/master
