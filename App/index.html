@@ -33,7 +33,7 @@
                     <h1 class="chooseTitle">Choose your avatar!</h1>
                     <div class="chooseAvatar_Container">
                         <div class="AvatarContainer" ng-repeat="avatar in modelAvatars">
-                            <img class="clip" src="/img/{{avatar.Photo}}.jpg" height="62" width="62" alt="{{avatar.Name}}" ng-click="SelectAvatar(avatar.Name)">
+                            <img class="clip" ng-class="{clip_selected : AvatarSelected==avatar.Name}" src="/img/{{avatar.Photo}}.jpg" height="62" width="62" alt="{{avatar.Name}}" ng-click="SelectAvatar(avatar.Name)">
                             <span class="AvatarName">{{avatar.Name}}</span>
                         </div>
                     </div>
