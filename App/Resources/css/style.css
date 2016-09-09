@@ -178,6 +178,23 @@ body
 {
     border: 4px solid #FF0000;
 }
+
+.clip_selected
+{
+    cursor: pointer;
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+    border: 4px solid #FF0000;
+    -webkit-box-shadow: 2px 2px 5px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 5px -1px rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 5px -1px rgba(0,0,0,0.75);
+    float: left;
+    margin: 0 0 0 20px;
+    padding: 0 0 0 0;
+    display: block;
+}
+
 #footer
 {}
 /*Loader*/
