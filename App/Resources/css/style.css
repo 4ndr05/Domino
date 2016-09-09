@@ -1,6 +1,8 @@
 body
 {
-	background:#EEEEEE;
+	background-image: url("../img/table_havana.png");
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 .container
 {
@@ -8,26 +10,64 @@ body
 }
 #header
 {
-	background:#f0c14b;
-	border:1px solid #a88734;
-	padding:10px;
-	text-align:center;
-	font-size:15px;
-	font-weight:bold;
+	padding:0;
+    margin: auto;
+}
+#logoHavanaGames
+{
+    background: transparent url(/img/havanagames.png) no-repeat 0 0;
+    background-size: contain;
+    width:400px;	   
+    height:360px; 
+    display: block;
+    margin: 0 auto 0 auto;
+    padding: 0 0 0 0;
 }
 #main
 {
-	border:1px solid #a88734;
 	padding:10px;
 }
 #footer
 {
-	background:#f0c14b;
 	border:1px solid #a88734;
-	padding:10px;
-	text-align:center;
-	font-size:15px;
-	font-weight:bold;
+}
+.clip
+{
+    cursor: pointer;
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+    border: 4px solid #FFFFFF;
+    -webkit-box-shadow: 2px 2px 5px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 5px -1px rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 5px -1px rgba(0,0,0,0.75);
+    float: left;
+    margin: 0 0 0 20px;
+    padding: 0 0 0 0;
 }
 
+
+/* Retina-specific stuff here */ /* Retina-specific stuff here */ /* Retina-specific stuff here */ /* Retina-specific stuff here */
+/* Retina-specific stuff here */ /* Retina-specific stuff here */ /* Retina-specific stuff here */ /* Retina-specific stuff here */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx)  { 
+/* Retina-specific stuff here */ /* Retina-specific stuff here */ /* Retina-specific stuff here */ /* Retina-specific stuff here */
+#logoHavanaGames 
+    {
+        background: transparent url(/img/havanagames@2x.png) no-repeat 0 0;
+	    background-size: contain;
+	    width:400px;	   
+        height:360px;  
+	    display: block
+    }
+
+
+}
+/* Retina-specific stuff here */ /* Retina-specific stuff here */ /* Retina-specific stuff here */ /* Retina-specific stuff here */
+/* Retina-specific stuff here */ /* Retina-specific stuff here */ /* Retina-specific stuff here */ /* Retina-specific stuff here */
 
