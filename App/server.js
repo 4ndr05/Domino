@@ -116,6 +116,12 @@ io.on('connection', function (socket) {
         //socket.broadcast.to(id).emit('my message', msg);
     });
 
+    socket.on('gameOver', function (msg) {
+
+        console.log('Juego terminado ' + msg);
+        socket.to(msg).emit('youLose');
+    });
+
     socket.on('disconnect', function () {
 	  //io.emit('player_diconected', { player: 'xxxxx' } );
 	});

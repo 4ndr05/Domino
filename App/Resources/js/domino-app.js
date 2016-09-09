@@ -68,13 +68,30 @@ app.controller('GameController', function ($scope, $http)
 	$scope.Move = function(id)
 	{
 		socket.emit('tilePlayed',  'MJSEFJBSFJABSFJKFBSKDV|' + id);
+
+		for(tile in $scope.myTiles.tiles.items)
+		{
+			if($scope.myTiles.tiles.items[tile].tileid == id)
+			{
+				//alert($scope.myTiles.tiles.items[tile].tileid + "    -   " + id);
+				$scope.myTiles.tiles.items.splice(tile,1);
+				break;
+			}
+		}
+
 		$scope.modelGame.state.tiles.items.push({
-			"tileid": data,
+			"tileid": id,
 			"side_a":"6",
 			"side_b":"6",
 			"playerid":"PSDSFFDFNWJSDNFLDFK"
 		 });
 		 $scope.$evalAsync();
+
+ 		if ($scope.myTiles.tiles.items.length == 0)
+		{
+			socket.emit('gameOver',  'MJSEFJBSFJABSFJKFBSKDV');
+			
+		}
 	}
 
 	socket.on('playedtile', function (data) {
@@ -87,7 +104,12 @@ app.controller('GameController', function ($scope, $http)
 		 });
 		 $scope.$evalAsync();
 
-		 alert("Jugada: " + data);
+		 //alert("Jugada: " + data);
+	});
+
+	socket.on('youLose', function () {
+
+		 alert("TREMENDO PERDEDOR");
 	});
 
 	var tiles =
