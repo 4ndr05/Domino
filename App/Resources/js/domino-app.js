@@ -17,6 +17,9 @@ app.controller('AvatarController', function ($scope, $http)
 	avatars[11] = {Name:"Trump", Photo:"trump"};
 	$scope.modelAvatars = avatars;
 
+    $scope.step = 1;
+    $scope.AvatarSelected = ""; 
+
 	$scope.Play = function()
 	{
 		//Genera el websocket
@@ -29,9 +32,27 @@ app.controller('AvatarController', function ($scope, $http)
 			console.log("Nuevo Jugador: " + data.Name);
 		});
 	}
+
+    $scope.Cancel = function()
+	{
+        $scope.step = 1;
+    }
+
+    $scope.Init = function()
+	{
+        $scope.step = 2;
+    }
+
+    $scope.Select = function()
+	{
+        $scope.step = 3;
+    }
+
+    $scope.SelectAvatar  = function(avatarName)
+	{
+        $scope.AvatarSelected = avatarName;
+    }
 });
-<<<<<<< HEAD
-=======
 
 app.controller('GameController', function ($scope, $http) 
 {
@@ -102,4 +123,3 @@ app.controller('GameController', function ($scope, $http)
 
 	$scope.modelGame = game;
 });
->>>>>>> origin/master
