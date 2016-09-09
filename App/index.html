@@ -10,26 +10,41 @@
 			<div id="header" class="col-xs-12">
                 <div id="logoHavanaGames"></div>
 			</div>
-			<div id="main" class="row" ng-controller="AvatarController">
-                <div id="newGamePlay">
-                    
-                    
-                </div>
-                <div class="loader">
-                  <i></i><i></i><i></i><i></i><i></i>
-                </div>
-                <div id="chooseNickname" class="ChooseContanier">
+			<div id="main" class="col-xs-12" ng-controller="AvatarController">
                 
-                </div>                
+                <div id="newGamePlay" style="display:none;">
+                    <div id="newGame_Background"></div>
+					<button id="newGame_CallAction" ng-click="Play()">Jugar!</button>
+                    <div class="loader">
+                      <i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                </div>                                        
+                        
+                <div id="chooseNickname" class="ChooseContanier" style="display:none;">
+                    <h1 class="chooseTitle">Choose your nickname!</h1>
+                    <input id="Nickname_Input" type="text" placeholder="New player" />
+                    <div class="ChooseNav">
+                        <button class="ChooseBTNs">Skip Nickname</button>
+                        <button class="ChooseBTNs">Cancel</button>
+                        <button class="ChooseBTNs">Next</button>
+                    </div>
+                </div>  
+                        
 				<div id="chooseAvatar" class="ChooseContanier">
-					<div ng-repeat="avatar in modelAvatars">
-						<img class="clip" src="/img/{{avatar.Photo}}.jpg" height="62" width="62" alt="{{avatar.Name}}" ng-cloak>
-						<span>{{avatar.Name}}</span>
-					</div>
+                    <h1 class="chooseTitle">Choose your avatar!</h1>
+                    <div class="chooseAvatar_Container">
+                        <div class="AvatarContainer" ng-repeat="avatar in modelAvatars">
+                            <img class="clip" src="/img/{{avatar.Photo}}.jpg" height="62" width="62" alt="{{avatar.Name}}" ng-cloak>
+                            <span class="AvatarName">{{avatar.Name}}</span>
+                        </div>
+                    </div>
+                    <div class="ChooseNav">
+                        <button class="ChooseBTNs">Skip avatar</button>
+                        <button class="ChooseBTNs">Cancel</button>
+                        <button class="ChooseBTNs">Go!</button>
+                    </div>
 				</div>
-				<div>
-					<button ng-click="Play()">Jugar!</button>
-				</div>
+                        
 			</div>
 			<div id="footer" class="row">
 			

@@ -2,7 +2,8 @@ body
 {
 	background-image: url("../img/table_havana.png");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    background-position: 0 bottom;
 }
 .container
 {
@@ -12,6 +13,7 @@ body
 {
 	padding:0;
     margin: auto;
+    float: left;
 }
 #logoHavanaGames
 {
@@ -23,13 +25,139 @@ body
     margin: 0 auto 0 auto;
     padding: 0 0 0 0;
 }
+#newGame_Background
+{
+    background: transparent url(/img/dominoes_famous.png) no-repeat 0 0;
+    background-size: contain;
+    width:540px;	   
+    height:360px; 
+    display: block;
+    margin: 0 auto 0 auto;
+    padding: 0 0 0 0;
+}
+#newGame_CallAction
+{
+    background: transparent url(/img/btn_play.png) no-repeat 0 0;
+    background-size: contain;
+    width:230px;	   
+    height:260px; 
+    display: block;
+    margin: -180px auto 0 auto;
+    padding: 0 0 0 0;
+    text-indent: -99999;
+    border: 0px;
+    outline: 0;
+}
 #main
 {
-	padding:10px;
+	padding:0;
+    margin: auto;
+    float: left;
 }
-#footer
+.ChooseContanier
 {
-	border:1px solid #a88734;
+    background: rgba(250,149,82,.5);
+    background-color: rgba(241,231,103,.5);
+    /* Old Browsers */background: -moz-linear-gradient(left, rgba(250,149,82,.5) 0%, rgba(245,27,27,0.6) 100%);
+    /* FF3.6+ */background: -webkit-gradient(left top, right top, color-stop(0%, rgba(250,149,82,.5)), color-stop(100%, rgba(245,27,27,0.6)));
+    /* Chrome, Safari4+ */background: -webkit-linear-gradient(left, rgba(250,149,82,.5) 0%, rgba(245,27,27,0.6) 100%);
+    /* Chrome10+,Safari5.1+ */background: -o-linear-gradient(left, rgba(250,149,82,.5) 0%, rgba(245,27,27,0.6) 100%);
+    /* Opera 11.10+ */background: -ms-linear-gradient(left, rgba(250,149,82,.5) 0%, rgba(245,27,27,0.6) 100%);
+    /* IE 10+ */background: linear-gradient(to right, rgba(250,149,82,.5) 0%, rgba(245,27,27,0.6) 100%);
+    /* W3C */filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa9552', endColorstr='#f51b1b', GradientType=1 );
+    /* IE6-9 */
+    border-radius: 20px 20px 20px 20px;
+    -moz-border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+    border: 0px solid #000000;
+    width: 600px;
+    height: 270px;
+    overflow: hidden;
+    margin: 0 auto 0 auto;
+    padding: 0 0 0 0;
+}
+#Nickname_Input
+{
+    width: 450px;
+    height: 60px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 0px solid #000000;
+    border: none;
+    padding: 5px 5px 5px 5px;
+    font-size: 190%;
+        margin: 20px auto 30px 80px;
+}
+.ChooseNav
+{
+    width: 470px;
+    overflow: hidden;
+    height: auto;
+    margin: 0 auto 0 auto;
+    padding: 0 0 0 0;
+}
+.ChooseBTNs
+{
+    background: rgba(248,80,50,1);
+    /* Old Browsers */background: -moz-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 50%, rgba(246,41,12,1) 51%, rgba(240,47,23,1) 71%, rgba(231,56,39,1) 100%);
+     /* FF3.6+ */background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(248,80,50,1)), color-stop(50%, rgba(241,111,92,1)), color-stop(51%, rgba(246,41,12,1)), color-stop(71%, rgba(240,47,23,1)), color-stop(100%, rgba(231,56,39,1)));
+    /* Chrome, Safari4+ */background: -webkit-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 50%, rgba(246,41,12,1) 51%, rgba(240,47,23,1) 71%, rgba(231,56,39,1) 100%);
+     /* Chrome10+,Safari5.1+ */background: -o-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 50%, rgba(246,41,12,1) 51%, rgba(240,47,23,1) 71%, rgba(231,56,39,1) 100%);
+     /* Opera 11.10+ */background: -ms-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 50%, rgba(246,41,12,1) 51%, rgba(240,47,23,1) 71%, rgba(231,56,39,1) 100%);
+     /* IE 10+ */background: linear-gradient(to bottom, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 50%, rgba(246,41,12,1) 51%, rgba(240,47,23,1) 71%, rgba(231,56,39,1) 100%);
+    /* W3C */filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#e73827', GradientType=0 );
+    /* IE6-9 */
+    width: auto;
+    height: 40px;
+    padding: 7px 28px 10px 28px;
+    margin: 0 0 0 20px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 1px solid #0a0304;
+    color: #FFFFFF;
+    outline: 0;
+    font-size: 120%;
+}
+.ChooseBTNs:HOVER
+{
+    background: rgba(239,197,202,1);
+    /* Old Browsers */background: -moz-linear-gradient(top, rgba(239,197,202,1) 0%, rgba(210,75,90,1) 50%, rgba(186,39,55,1) 51%, rgba(241,142,153,1) 100%);
+    /* FF3.6+ */background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(239,197,202,1)), color-stop(50%, rgba(210,75,90,1)), color-stop(51%, rgba(186,39,55,1)), color-stop(100%, rgba(241,142,153,1)));
+    /* Chrome, Safari4+ */background: -webkit-linear-gradient(top, rgba(239,197,202,1) 0%, rgba(210,75,90,1) 50%, rgba(186,39,55,1) 51%, rgba(241,142,153,1) 100%);
+     /* Chrome10+,Safari5.1+ */background: -o-linear-gradient(top, rgba(239,197,202,1) 0%, rgba(210,75,90,1) 50%, rgba(186,39,55,1) 51%, rgba(241,142,153,1) 100%);
+     /* Opera 11.10+ */background: -ms-linear-gradient(top, rgba(239,197,202,1) 0%, rgba(210,75,90,1) 50%, rgba(186,39,55,1) 51%, rgba(241,142,153,1) 100%);
+     /* IE 10+ */background: linear-gradient(to bottom, rgba(239,197,202,1) 0%, rgba(210,75,90,1) 50%, rgba(186,39,55,1) 51%, rgba(241,142,153,1) 100%);
+    /* W3C */filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efc5ca', endColorstr='#f18e99', GradientType=0 );
+    /* IE6-9 */
+}
+.chooseAvatar_Container
+{
+    width: 450px;
+    height: 150px;
+    margin: 0 auto 0 auto;
+    padding: 0 0 0 0;
+    overflow: hidden;
+}
+.chooseTitle
+{
+    text-align: center;
+    color: #ffffff;
+    font-family: sans-serif;
+}
+.AvatarContainer
+{
+    width: 65px;
+    height: 65px;
+    float: left;
+    text-indent: -999999;
+    margin: 3px 3px 3px 3px;
+    padding: 0 0 0 0;
+}
+.AvatarName
+{
+    display: none;
 }
 .clip
 {
@@ -44,9 +172,14 @@ body
     float: left;
     margin: 0 0 0 20px;
     padding: 0 0 0 0;
+    display: block;
 }
-
-
+.clip:HOVER
+{
+    border: 4px solid #FF0000;
+}
+#footer
+{}
 /*Loader*/
 i {
   position: relative;
@@ -160,7 +293,21 @@ only screen and (                min-resolution: 2dppx)  {
         height:360px;  
 	    display: block
     }
-
+#newGame_Background
+    {
+        background: transparent url(/img/dominoes_famous@2x.png) no-repeat 0 0;
+        background-size: contain;
+	    width:540px;	   
+        height:360px;  
+	    display: block
+    }
+#newGame_CallAction
+    {
+        background: transparent url(/img/btn_play@2x.png) no-repeat 0 0;
+        background-size: contain;
+        width:230px;	   
+        height:260px; 
+    }
 
 }
 /* Retina-specific stuff here */ /* Retina-specific stuff here */ /* Retina-specific stuff here */ /* Retina-specific stuff here */
