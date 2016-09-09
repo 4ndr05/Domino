@@ -5,6 +5,13 @@ body
     background-size: cover;
     background-position: 0 bottom;
 }
+body#bgGame
+{
+	background-image: url("../img/table_havana_games.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 bottom;
+}
 .container
 {
 	background:#FFFFFF;
@@ -193,6 +200,107 @@ body
     margin: 0 0 0 20px;
     padding: 0 0 0 0;
     display: block;
+}
+
+#jugadores
+{
+    background: rgba(250,149,82,.8);
+    background-color: rgba(241,231,103,.8);
+    /* Old Browsers */background: -moz-linear-gradient(left, rgba(250,149,82,.5) 0%, rgba(245,27,27,0.6) 100%);
+    /* FF3.6+ */background: -webkit-gradient(left top, right top, color-stop(0%, rgba(250,149,82,.5)), color-stop(100%, rgba(245,27,27,0.6)));
+    /* Chrome, Safari4+ */background: -webkit-linear-gradient(left, rgba(250,149,82,.5) 0%, rgba(245,27,27,0.6) 100%);
+    /* Chrome10+,Safari5.1+ */background: -o-linear-gradient(left, rgba(250,149,82,.5) 0%, rgba(245,27,27,0.6) 100%);
+    /* Opera 11.10+ */background: -ms-linear-gradient(left, rgba(250,149,82,.5) 0%, rgba(245,27,27,0.6) 100%);
+    /* IE 10+ */background: linear-gradient(to right, rgba(250,149,82,.5) 0%, rgba(245,27,27,0.6) 100%);
+    /* W3C */filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa9552', endColorstr='#f51b1b', GradientType=1 );
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+    /* IE6-9 */
+    float: left;
+    width: 100px;
+    height: auto;
+    text-align: center;
+}
+#MisFichas
+{
+    background: rgba(250,149,82,.8);
+    background-color: rgba(241,231,103,.8);
+    /* Old Browsers */background: -moz-linear-gradient(left, rgba(250,149,82,.5) 0%, rgba(245,27,27,0.6) 100%);
+    /* FF3.6+ */background: -webkit-gradient(left top, right top, color-stop(0%, rgba(250,149,82,.5)), color-stop(100%, rgba(245,27,27,0.6)));
+    /* Chrome, Safari4+ */background: -webkit-linear-gradient(left, rgba(250,149,82,.5) 0%, rgba(245,27,27,0.6) 100%);
+    /* Chrome10+,Safari5.1+ */background: -o-linear-gradient(left, rgba(250,149,82,.5) 0%, rgba(245,27,27,0.6) 100%);
+    /* Opera 11.10+ */background: -ms-linear-gradient(left, rgba(250,149,82,.5) 0%, rgba(245,27,27,0.6) 100%);
+    /* IE 10+ */background: linear-gradient(to right, rgba(250,149,82,.5) 0%, rgba(245,27,27,0.6) 100%);
+    /* W3C */filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa9552', endColorstr='#f51b1b', GradientType=1 );
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+    padding: 20px 20px 20px 20px;
+    text-align: center;
+    float: left;
+    width: 400px;
+    height: auto;
+    overflow: hidden;
+    margin: 0 0 0 400px;
+    bottom: 30px;
+    position: absolute;
+}
+#game_status
+{
+    padding: 20px 20px 20px 20px;
+    text-align: center;
+    float: left;
+    width: 400px;
+    height: auto;
+    overflow: hidden;
+    margin: 0 0 0 400px;
+    bottom: 30px;
+    /*position: absolute;*/
+}
+.domino
+{
+    background-color: #000;
+    color: #FFF;
+    float: left;
+    font-size: 15px;
+    width: 6em;
+    height: 3em;
+    margin: 10px 10px 10px 10px;
+    padding: 15px;
+    position: relative;
+    -webkit-border-radius: .8em;
+    -moz-border-radius: .8em;
+    border-radius: .8em;
+    -moz-box-shadow: .3em .3em 0em .2em #333;
+    -webkit-box-shadow: .3em .3em 0em .2em #333;
+    box-shadow: .3em .3em 0em .2em #333;
+    cursor:pointer;
+}
+.domino_game
+{
+    background-color: #000;
+    color: #FFF;
+    padding: 15px;
+    float: left;
+    font-size: 15px;
+    width: 6em;
+    height: 3em;
+    margin: 10px 10px 10px 10px;
+    position: relative;
+    -webkit-border-radius: .8em;
+    -moz-border-radius: .8em;
+    border-radius: .8em;
+    -moz-box-shadow: .3em .3em 0em .2em #333;
+    -webkit-box-shadow: .3em .3em 0em .2em #333;
+    box-shadow: .3em .3em 0em .2em #333;
+}
+.titleFSection
+{
+    float: left;
+    font-size: 160%;
+    color: #fff;
+    width: 340px;
 }
 
 #footer
