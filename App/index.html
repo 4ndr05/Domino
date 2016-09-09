@@ -6,26 +6,30 @@
 		<link type="text/css" rel="stylesheet" href="/css/style.css"></link>
 	</head>
 	<body>
-		<div class="container" ng-app="DominoApp" ng-cloak>
-			<div id="header" class="row">
-				Header
+		<div class="col-lg-12" ng-app="DominoApp" ng-cloak>
+			<div id="header" class="col-xs-12">
+                <div id="logoHavanaGames"></div>
 			</div>
 			<div id="main" class="row" ng-controller="AvatarController">
-				Body
-				<div>
-					Avatars
+                <div id="newGamePlay">
+                    
+                    
+                </div>
+                <div id="chooseNickname" class="ChooseContanier">
+                
+                </div>                
+				<div id="chooseAvatar" class="ChooseContanier">
 					<div ng-repeat="avatar in modelAvatars">
-						<img src="/img/{{avatar.Photo}}.jpg" alt="{{avatar.Name}}" ng-cloak>
+						<img class="clip" src="/img/{{avatar.Photo}}.jpg" height="62" width="62" alt="{{avatar.Name}}" ng-cloak>
 						<span>{{avatar.Name}}</span>
 					</div>
 				</div>
 				<div>
-					Botones
 					<button ng-click="Play()">Jugar!</button>
 				</div>
 			</div>
 			<div id="footer" class="row">
-				Footer
+			
 			</div>
 		</div>
 	</body>

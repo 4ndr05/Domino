@@ -1,5 +1,6 @@
-C:\Projects\Projects\RAMLCodeBuilder\output\domino_20160907_213512\domino\bin\domino.dll
-C:\Projects\Projects\RAMLCodeBuilder\output\domino_20160907_213512\domino\bin\domino.pdb
-C:\Projects\Projects\RAMLCodeBuilder\output\domino_20160907_213512\domino\bin\ServiceCore.dll
-C:\Projects\Projects\RAMLCodeBuilder\output\domino_20160907_213512\domino\obj\Debug\domino.dll
-C:\Projects\Projects\RAMLCodeBuilder\output\domino_20160907_213512\domino\obj\Debug\domino.pdb
+C:\Projects\Projects\RAMLCodeBuilder\output\domino_20160908_181608\domino\bin\domino.dll
+C:\Projects\Projects\RAMLCodeBuilder\output\domino_20160908_181608\domino\bin\domino.pdb
+C:\Projects\Projects\RAMLCodeBuilder\output\domino_20160908_181608\domino\bin\ServiceCore.dll
+C:\Projects\Projects\RAMLCodeBuilder\output\domino_20160908_181608\domino\obj\Debug\domino.csprojResolveAssemblyReference.cache
+C:\Projects\Projects\RAMLCodeBuilder\output\domino_20160908_181608\domino\obj\Debug\domino.dll
+C:\Projects\Projects\RAMLCodeBuilder\output\domino_20160908_181608\domino\obj\Debug\domino.pdb

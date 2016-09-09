@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <publishData>
   <publishProfile publishUrl="C:\Projects\DEPLOYS" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
-    <file relUrl="bin/domino.dll" publishTime="09/08/2016 10:13:21" />
-    <file relUrl="bin/domino.pdb" publishTime="09/08/2016 10:13:21" />
-    <file relUrl="dll/ServiceCore.dll" publishTime="09/07/2016 21:35:16" />
-    <file relUrl="Web.config" publishTime="09/08/2016 10:14:42" />
-    <file relUrl="Global.asax" publishTime="09/07/2016 21:35:16" />
-    <file relUrl="bin/ServiceCore.dll" publishTime="09/07/2016 21:35:16" />
+    <file relUrl="bin/domino.dll" publishTime="09/08/2016 18:17:04" />
+    <file relUrl="bin/domino.pdb" publishTime="09/08/2016 18:17:03" />
+    <file relUrl="dll/ServiceCore.dll" publishTime="09/08/2016 18:16:12" />
+    <file relUrl="Web.config" publishTime="09/08/2016 18:17:49" />
+    <file relUrl="Global.asax" publishTime="09/08/2016 18:16:12" />
+    <file relUrl="bin/ServiceCore.dll" publishTime="09/08/2016 18:16:12" />
   </publishProfile>
 </publishData>
