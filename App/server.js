@@ -21,6 +21,10 @@ app.get('/index.html', function (req, res) {
     res.sendFile(__dirname + "/" + "index.html" );
 })
 
+app.get('/game.html', function (req, res) {
+    res.sendFile(__dirname + "/" + "game.html" );
+})
+
 /*
 app.post('/process_post', urlencodedParser, function (req, res)
 {
