@@ -68,10 +68,26 @@ app.controller('GameController', function ($scope, $http)
 	$scope.Move = function(id)
 	{
 		socket.emit('tilePlayed',  'MJSEFJBSFJABSFJKFBSKDV|' + id);
+		$scope.modelGame.state.tiles.items.push({
+			"tileid": data,
+			"side_a":"6",
+			"side_b":"6",
+			"playerid":"PSDSFFDFNWJSDNFLDFK"
+		 });
+		 $scope.$evalAsync();
 	}
 
 	socket.on('playedtile', function (data) {
-		alert("Jugada: " + data);
+		//alert("Jugada: " + data);
+		$scope.modelGame.state.tiles.items.push({
+			"tileid": data,
+			"side_a":"6",
+			"side_b":"6",
+			"playerid":"PSDSFFDFNWJSDNFLDFK"
+		 });
+		 $scope.$evalAsync();
+
+		 alert("Jugada: " + data);
 	});
 
 	var tiles =
