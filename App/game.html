@@ -21,16 +21,20 @@
 				</div>
 				<div>
 					Mis fichas
+					<span ng-repeat="tile in myTiles.tiles.items">
+						<button class="PlayTile" ng-click="Move(tile.tileid)">{{tile.tileid}}</button>
+					</span>
 				</div>
 				<div id="game_status">
 					Fichas jugadas
 					<span ng-repeat="tile in modelGame.state.tiles.items">
-						{{tile.tileid}} |
+						{{tile.tileid}}
 					</span>
 				<div>
 			</div>
+
 			<div id="footer" class="row">
-			
+
 			</div>
 		</div>
 	</body>

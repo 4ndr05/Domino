@@ -61,11 +61,58 @@ app.controller('AvatarController', function ($scope, $http)
 
 app.controller('GameController', function ($scope, $http)
 {
+	var socket;
+
+	$scope.Move = function(id)
+	{
+		//Genera el websocket
+		if(socket == null)
+		{
+			socket = io.connect('http://localhost:8081');
+			socket.emit('join',  'MJSEFJBSFJABSFJKFBSKDV');
+		}
+
+		socket.emit('tilePlayed',  'MJSEFJBSFJABSFJKFBSKDV|' + id);
+
+		//Nuevo Jugador
+		socket.on('NuevoJugador', function (data) {
+			console.log("Nuevo Jugador: " + data.Name);
+		});
+
+		socket.on('playedtile', function (data) {
+			alert("Jugada: " + data);
+		});
+	}
+
+	var tiles =
+	{
+   "tiles":{
+      "points":"31",
+      "items":[
+         {
+            "tileid":"6-6",
+            "side_a":"6",
+            "side_b":"6"
+         },
+         {
+            "tileid":"4-6",
+            "side_a":"6",
+            "side_b":"4"
+         },
+         {
+            "tileid":"4-5",
+            "side_a":"4",
+            "side_b":"5"
+         }
+      ]
+   }
+}
+
 	var game =
 	{
    "matchid":"MJSEFJBSFJABSFJKFBSKDV",
    "creation_date":"2015-11-30",
-   "title":"Match de pruebas del domino",
+   "title":"Este Domino no lo tiene ni Obama!",
    "state":{
       "max_tiles":28,
       "status": "playing",
@@ -127,4 +174,5 @@ app.controller('GameController', function ($scope, $http)
 }
 
 	$scope.modelGame = game;
+	$scope.myTiles = tiles;
 });

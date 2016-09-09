@@ -103,6 +103,18 @@ io.on('connection', function (socket) {
         addParticipant(socket, props[0], props[1]);
     });
 
+    socket.on('join', function(msg) {
+        console.log('Rejoining: ' + msg);
+        socket.join(msg);
+    });
+
+    socket.on('tilePlayed', function(msg) {
+        var props = msg.split('|');
+        console.log(msg);
+        //io.to().emit(props[1]);
+        io.to(props[0]).emit('playedtile', props[1]);
+    });
+
     socket.on('disconnect', function () {
 	  //io.emit('player_diconected', { player: 'xxxxx' } );
 	});
