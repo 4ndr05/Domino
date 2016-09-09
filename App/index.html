@@ -11,24 +11,24 @@
                 <div id="logoHavanaGames"></div>
 			</div>
 			<div id="main" class="col-xs-12" ng-controller="AvatarController">
-                
+
                 <div id="newGamePlay" ng-show="step == 1">
                     <div id="newGame_Background"></div>
 					<button id="newGame_CallAction" ng-click="Init()">Jugar!</button>
                     <div class="loader">
                       <i></i><i></i><i></i><i></i><i></i>
                     </div>
-                </div>                                        
-                        
+                </div>
+
                 <div id="chooseNickname" class="ChooseContanier" ng-show="step == 2">
                     <h1 class="chooseTitle">Choose your nickname!</h1>
-                    <input id="Nickname_Input" type="text" placeholder="New player" />
+                    <input id="Nickname_Input" type="text" placeholder="New player" ng-model="nombre" />
                     <div class="ChooseNav">
                         <button class="ChooseBTNs" ng-click="Cancel()">Cancel</button>
                         <button class="ChooseBTNs" ng-click="Select()">Next</button>
                     </div>
-                </div>  
-                        
+                </div>
+
 				<div id="chooseAvatar" class="ChooseContanier" ng-show="step == 3">
                     <h1 class="chooseTitle">Choose your avatar!</h1>
                     <div class="chooseAvatar_Container">
@@ -42,10 +42,10 @@
                         <button class="ChooseBTNs" ng-click="Play()">Go!</button>
                     </div>
 				</div>
-                        
+
 			</div>
 			<div id="footer" class="row">
-			
+
 			</div>
 		</div>
 	</body>

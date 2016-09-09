@@ -18,18 +18,23 @@ app.controller('AvatarController', function ($scope, $http)
 	$scope.modelAvatars = avatars;
 
     $scope.step = 1;
-    $scope.AvatarSelected = ""; 
+    $scope.AvatarSelected = "";
+
+	$scope.nombre = "";
 
 	$scope.Play = function()
 	{
 		//Genera el websocket
 		var socket = io.connect('http://localhost:8081');
-		socket.emit('newPlayer', 'Player|Icon1');
-
+		socket.emit('newPlayer',  $scope.nombre + '|' + $scope.AvatarSelected);
 
 		//Nuevo Jugador
 		socket.on('NuevoJugador', function (data) {
 			console.log("Nuevo Jugador: " + data.Name);
+		});
+
+		socket.on('url', function (data) {
+			window.location.href = data;
 		});
 	}
 
@@ -54,9 +59,9 @@ app.controller('AvatarController', function ($scope, $http)
     }
 });
 
-app.controller('GameController', function ($scope, $http) 
+app.controller('GameController', function ($scope, $http)
 {
-	var game = 
+	var game =
 	{
    "matchid":"MJSEFJBSFJABSFJKFBSKDV",
    "creation_date":"2015-11-30",
@@ -67,7 +72,7 @@ app.controller('GameController', function ($scope, $http)
       "next_player": "PLIJSMFMGRNFOGNDKF",
       "game_stream":"6-6,6-4,4-5",
       "side_a":"6",
-      "side_b":"5",      
+      "side_b":"5",
       "tiles":{
          "items":[
             {
@@ -87,7 +92,7 @@ app.controller('GameController', function ($scope, $http)
                "side_a":"4",
                "side_b":"5",
                "playerid":"PKDONFGFGMPFKGDDGD"
-            }            
+            }
          ]
       }
    },
@@ -97,7 +102,7 @@ app.controller('GameController', function ($scope, $http)
             "playerid":"PSDSFFDFNWJSDNFLDFK",
             "creation_date":"2015-11-30",
             "alias":"El loco",
-            "avatar": "putin"            
+            "avatar": "putin"
          },
          {
             "playerid":"PJDLSOWERNFLEKFND",
@@ -109,14 +114,14 @@ app.controller('GameController', function ($scope, $http)
             "playerid":"PKDONFGFGMPFKGDDGD",
             "creation_date":"2015-11-30",
             "alias":"player_3",
-            "avatar": "fidel"            
+            "avatar": "fidel"
          },
          {
             "playerid":"PLIJSMFMGRNFOGNDKF",
             "creation_date":"2015-11-30",
             "alias":"kubano",
             "avatar": "che"
-         }              
+         }
       ]
    }
 }

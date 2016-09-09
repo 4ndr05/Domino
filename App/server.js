@@ -64,6 +64,7 @@ function addParticipant(data, nick, icon) {
                 if(!error && response.statusCode == 201) {
                     console.log(util.format('%s %s %s', currentGameId, nick, icon));
                     data.join(currentGameId);
+                    data.emit('url', '/game.html');
                     io.to(currentGameId).emit('NuevoJugador', { Name: nick, photo: icon });
                 }
             });
@@ -98,7 +99,6 @@ io.on('connection', function (socket) {
     console.log("Usuario conectado - " + socket.id);
 
     socket.on('newPlayer', function(msg) {
-
         var props = msg.split('|');
         addParticipant(socket, props[0], props[1]);
     });
