@@ -63,8 +63,8 @@ function addParticipant(data, nick, icon) {
                 //En caso de que se una el jugador, lo metemos al canal del juego
                 if(!error && response.statusCode == 201) {
                     console.log(util.format('%s %s %s', currentGameId, nick, icon));
-                    data.join(currentGameId);
-                    data.emit('url', '/game.html');
+                    //data.join(currentGameId);
+                    data.emit('url', 'http://172.16.2.16:8081/game.html');
                     io.to(currentGameId).emit('NuevoJugador', { Name: nick, photo: icon });
                 }
             });
@@ -96,7 +96,7 @@ function getParticipants(currentGameId) {
 
 io.on('connection', function (socket) {
 
-    console.log("Usuario conectado - " + socket.id);
+    //console.log("Usuario conectado - " + socket.id);
 
     socket.on('newPlayer', function(msg) {
         var props = msg.split('|');
@@ -110,9 +110,10 @@ io.on('connection', function (socket) {
 
     socket.on('tilePlayed', function(msg) {
         var props = msg.split('|');
-        console.log(msg);
+        console.log(msg + "     " + socket.id);
         //io.to().emit(props[1]);
-        io.to(props[0]).emit('playedtile', props[1]);
+        socket.to(props[0]).emit('playedtile', props[1]);
+        //socket.broadcast.to(id).emit('my message', msg);
     });
 
     socket.on('disconnect', function () {

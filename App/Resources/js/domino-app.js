@@ -25,7 +25,7 @@ app.controller('AvatarController', function ($scope, $http)
 	$scope.Play = function()
 	{
 		//Genera el websocket
-		var socket = io.connect('http://localhost:8081');
+		var socket = io.connect('http://172.16.2.16:8081');
 		socket.emit('newPlayer',  $scope.nombre + '|' + $scope.AvatarSelected);
 
 		//Nuevo Jugador
@@ -61,28 +61,18 @@ app.controller('AvatarController', function ($scope, $http)
 
 app.controller('GameController', function ($scope, $http)
 {
-	var socket;
+
+	var socket = io.connect('http://172.16.2.16:8081');
+	socket.emit('join',  'MJSEFJBSFJABSFJKFBSKDV');
 
 	$scope.Move = function(id)
 	{
-		//Genera el websocket
-		if(socket == null)
-		{
-			socket = io.connect('http://localhost:8081');
-			socket.emit('join',  'MJSEFJBSFJABSFJKFBSKDV');
-		}
-
 		socket.emit('tilePlayed',  'MJSEFJBSFJABSFJKFBSKDV|' + id);
-
-		//Nuevo Jugador
-		socket.on('NuevoJugador', function (data) {
-			console.log("Nuevo Jugador: " + data.Name);
-		});
-
-		socket.on('playedtile', function (data) {
-			alert("Jugada: " + data);
-		});
 	}
+
+	socket.on('playedtile', function (data) {
+		alert("Jugada: " + data);
+	});
 
 	var tiles =
 	{
