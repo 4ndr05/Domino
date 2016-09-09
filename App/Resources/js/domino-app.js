@@ -3,7 +3,7 @@ app.controller('AvatarController', function ($scope, $http)
 {
     //carga inicial de avatars
 	var avatars = new Array();
-	avatars[0] = {Name:"Andrés Manuel", Photo:"amlo"};
+	avatars[0] = {Name:"Obama", Photo:"obama"};
 	avatars[1] = {Name:"Celia Cruz", Photo:"celia"};
 	avatars[2] = {Name:"Hugo Chavez", Photo:"chavez"};
 	avatars[3] = {Name:"Che Guevara", Photo:"che"};
@@ -11,7 +11,7 @@ app.controller('AvatarController', function ($scope, $http)
 	avatars[5] = {Name:"Fidel Castro", Photo:"fidel"};
 	avatars[6] = {Name:"Kim", Photo:"kim"};
 	avatars[7] = {Name:"Maduro", Photo:"maduro"};
-	avatars[8] = {Name:"Obama", Photo:"obama"};
+	avatars[8] = {Name:"Andrés Manuel", Photo:"amlo"};
 	avatars[9] = {Name:"Enrique Peña", Photo:"pena"};
 	avatars[10] = {Name:"Putin", Photo:"putin"};
 	avatars[11] = {Name:"Trump", Photo:"trump"};
@@ -112,7 +112,7 @@ app.controller('GameController', function ($scope, $http)
 	{
    "matchid":"MJSEFJBSFJABSFJKFBSKDV",
    "creation_date":"2015-11-30",
-   "title":"Este Domino no lo tiene ni Obama!",
+   "title":"Este Dominó no lo tiene ni Obama!",
    "state":{
       "max_tiles":28,
       "status": "playing",
@@ -148,25 +148,25 @@ app.controller('GameController', function ($scope, $http)
          {
             "playerid":"PSDSFFDFNWJSDNFLDFK",
             "creation_date":"2015-11-30",
-            "alias":"El loco",
-            "avatar": "putin"
+            "alias":"player_1",
+            "avatar": "obama"
          },
          {
             "playerid":"PJDLSOWERNFLEKFND",
             "creation_date":"2015-11-30",
-            "alias":"Azuca !!!",
+            "alias":"player_2",
             "avatar": "celia"
          },
          {
             "playerid":"PKDONFGFGMPFKGDDGD",
             "creation_date":"2015-11-30",
             "alias":"player_3",
-            "avatar": "fidel"
+            "avatar": "chavez"
          },
          {
             "playerid":"PLIJSMFMGRNFOGNDKF",
             "creation_date":"2015-11-30",
-            "alias":"kubano",
+            "alias":"player_4",
             "avatar": "che"
          }
       ]
